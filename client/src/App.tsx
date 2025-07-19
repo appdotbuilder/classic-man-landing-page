@@ -98,11 +98,33 @@ function App() {
           </div>
           
           {/* Hero Image Placeholder */}
-          <div className="bg-gradient-to-r from-slate-200 to-slate-300 rounded-2xl h-96 flex items-center justify-center shadow-2xl">
-            <div className="text-slate-500 text-center">
-              <div className="text-6xl mb-4">🎬</div>
-              <p className="text-xl">Vídeo de Apresentação</p>
-              <p className="text-sm text-slate-400">Em breve...</p>
+          <div className="bg-gradient-to-br from-slate-800 via-slate-700 to-amber-900 rounded-2xl h-96 flex items-center justify-center shadow-2xl relative overflow-hidden">
+            {/* Background pattern overlay */}
+            <div className="absolute inset-0 opacity-10">
+              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white to-transparent transform rotate-12"></div>
+            </div>
+            
+            <div className="text-slate-100 text-center relative z-10 max-w-2xl mx-auto px-6">
+              <div className="flex justify-center mb-4 space-x-3">
+                <span className="text-4xl">👔</span>
+                <span className="text-4xl">🎯</span>
+                <span className="text-4xl">⚡</span>
+              </div>
+              <p className="text-xl font-semibold mb-2 text-amber-200">
+                Aqui será um vídeo ou imagem impactante do homem clássico
+              </p>
+              <p className="text-sm text-slate-300 leading-relaxed">
+                Imagine um homem elegante e confiante, cercado por elementos que remetem à sabedoria e tradição, 
+                ou um vídeo inspirador de 30 segundos que introduza o conceito transformador do curso
+              </p>
+              
+              {/* Decorative elements */}
+              <div className="flex justify-center mt-6 space-x-8 text-2xl opacity-60">
+                <span>📚</span>
+                <span>🏛️</span>
+                <span>👑</span>
+                <span>⚔️</span>
+              </div>
             </div>
           </div>
         </div>
