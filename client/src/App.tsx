@@ -323,58 +323,134 @@ function App() {
 
       {/* Pricing/Enrollment */}
       <section id="enrollment" className="py-20 px-4 bg-white">
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-8 text-slate-900">
               Invista em Sua Transformação
             </h2>
-            <p className="text-xl text-slate-600">
-              Uma oportunidade única de descobrir seu potencial máximo
+            <p className="text-xl text-slate-600 mb-4">
+              Escolha o plano ideal para sua jornada de desenvolvimento
             </p>
+            <Badge className="bg-amber-100 text-amber-800 px-4 py-2 text-sm">
+              ⏳ Preços em breve - Garante já sua vaga
+            </Badge>
           </div>
 
-          <div className="grid lg:grid-cols-2 gap-12">
-            <Card className="p-8 shadow-xl border-0 bg-gradient-to-br from-amber-50 to-amber-100">
+          {/* Pricing Tiers */}
+          <div className="grid lg:grid-cols-2 gap-8 mb-16">
+            {/* Acesso Básico */}
+            <Card className="p-8 shadow-xl border-0 bg-gradient-to-br from-slate-50 to-slate-100 relative">
               <CardHeader className="text-center pb-8">
-                <div className="text-5xl mb-4">🏆</div>
-                <CardTitle className="text-2xl text-slate-800 mb-4">Curso Completo</CardTitle>
-                <div className="text-4xl font-bold text-amber-700 mb-2">R$ XXX</div>
-                <p className="text-slate-600">Valor em breve</p>
+                <div className="text-5xl mb-4">🎯</div>
+                <CardTitle className="text-2xl text-slate-800 mb-4">Acesso Básico</CardTitle>
+                <div className="text-4xl font-bold text-slate-700 mb-2">R$ XXX</div>
+                <p className="text-slate-500 text-sm">Valor em breve</p>
               </CardHeader>
               <CardContent className="space-y-4">
                 <div className="flex items-center gap-3">
                   <span className="text-green-600">✓</span>
-                  <span>Acesso completo aos 6 módulos</span>
+                  <span className="text-slate-700">Acesso a todos os módulos do curso</span>
                 </div>
                 <div className="flex items-center gap-3">
                   <span className="text-green-600">✓</span>
-                  <span>Material complementar exclusivo</span>
+                  <span className="text-slate-700">Material de apoio digital</span>
                 </div>
                 <div className="flex items-center gap-3">
                   <span className="text-green-600">✓</span>
-                  <span>Suporte direto do instrutor</span>
+                  <span className="text-slate-700">Exercícios práticos</span>
                 </div>
                 <div className="flex items-center gap-3">
                   <span className="text-green-600">✓</span>
-                  <span>Garantia de 30 dias</span>
+                  <span className="text-slate-700">Acesso por 6 meses</span>
                 </div>
+                <div className="flex items-center gap-3">
+                  <span className="text-green-600">✓</span>
+                  <span className="text-slate-700">Suporte via email</span>
+                </div>
+                <Separator className="my-6" />
+                <Button 
+                  variant="outline" 
+                  className="w-full h-12 border-slate-300 text-slate-700 hover:bg-slate-50"
+                  onClick={() => document.getElementById('enrollment-form')?.scrollIntoView({ behavior: 'smooth' })}
+                >
+                  Quero Este Plano
+                </Button>
               </CardContent>
             </Card>
 
-            <div className="space-y-8">
-              <div>
-                <h3 className="text-2xl font-bold mb-6 text-slate-900">
-                  📝 Manifestar Interesse
-                </h3>
-                <p className="text-slate-600 mb-6">
-                  Seja o primeiro a saber quando as inscrições abrirem e garanta condições especiais.
+            {/* Acesso Premium */}
+            <Card className="p-8 shadow-xl border-2 border-amber-200 bg-gradient-to-br from-amber-50 to-amber-100 relative">
+              {/* Popular Badge */}
+              <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
+                <Badge className="bg-amber-600 text-white px-6 py-2 text-sm">
+                  ⭐ MAIS POPULAR
+                </Badge>
+              </div>
+              
+              <CardHeader className="text-center pb-8">
+                <div className="text-5xl mb-4">👑</div>
+                <CardTitle className="text-2xl text-slate-800 mb-4">Acesso Premium</CardTitle>
+                <div className="text-4xl font-bold text-amber-700 mb-2">R$ XXX</div>
+                <p className="text-amber-600 text-sm font-medium">Valor em breve</p>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                <p className="text-amber-800 font-semibold text-center mb-6">
+                  Tudo do Básico +
                 </p>
                 
+                <div className="flex items-center gap-3">
+                  <span className="text-green-600">✓</span>
+                  <span className="text-slate-700">Sessões de mentoria em grupo</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <span className="text-green-600">✓</span>
+                  <span className="text-slate-700">Comunidade exclusiva de alunos</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <span className="text-green-600">✓</span>
+                  <span className="text-slate-700">Acesso vitalício ao conteúdo</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <span className="text-green-600">✓</span>
+                  <span className="text-slate-700">Suporte prioritário direto</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <span className="text-green-600">✓</span>
+                  <span className="text-slate-700">Bônus: Guia de Etiqueta Clássica</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <span className="text-green-600">✓</span>
+                  <span className="text-slate-700">Certificado de conclusão</span>
+                </div>
+                <Separator className="my-6" />
+                <Button 
+                  className="w-full h-12 bg-amber-600 hover:bg-amber-700 text-white"
+                  onClick={() => document.getElementById('enrollment-form')?.scrollIntoView({ behavior: 'smooth' })}
+                >
+                  🏆 Quero Este Plano
+                </Button>
+              </CardContent>
+            </Card>
+          </div>
+
+          {/* Enrollment Form */}
+          <div id="enrollment-form" className="max-w-2xl mx-auto">
+            <Card className="p-8 shadow-xl border-0 bg-gradient-to-br from-slate-50 to-white">
+              <CardHeader className="text-center pb-6">
+                <CardTitle className="text-2xl text-slate-900 mb-4">
+                  📝 Manifestar Interesse
+                </CardTitle>
+                <p className="text-slate-600">
+                  Seja o primeiro a saber quando as inscrições abrirem e garante condições especiais de lançamento.
+                </p>
+              </CardHeader>
+              
+              <CardContent>
                 {enrollmentSuccess ? (
                   <div className="bg-green-50 border border-green-200 rounded-lg p-6 text-center">
                     <div className="text-4xl mb-4">✅</div>
-                    <p className="text-green-800 font-semibold">Interesse registrado com sucesso!</p>
-                    <p className="text-green-600 text-sm mt-2">Entraremos em contato em breve.</p>
+                    <p className="text-green-800 font-semibold text-lg">Interesse registrado com sucesso!</p>
+                    <p className="text-green-600 text-sm mt-2">Entraremos em contato em breve com detalhes exclusivos.</p>
                   </div>
                 ) : (
                   <form onSubmit={handleEnrollmentSubmit} className="space-y-4">
@@ -409,14 +485,19 @@ function App() {
                     <Button 
                       type="submit" 
                       disabled={isEnrollmentLoading}
-                      className="w-full h-12 bg-amber-600 hover:bg-amber-700 text-white text-lg"
+                      className="w-full h-14 bg-amber-600 hover:bg-amber-700 text-white text-lg"
                     >
                       {isEnrollmentLoading ? '🔄 Registrando...' : '🎯 Quero Ser Notificado'}
                     </Button>
+                    
+                    <div className="flex items-center justify-center gap-2 text-sm text-slate-500 mt-4">
+                      <span>🔒</span>
+                      <span>Seus dados estão seguros conosco</span>
+                    </div>
                   </form>
                 )}
-              </div>
-            </div>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>
