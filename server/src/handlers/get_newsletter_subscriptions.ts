@@ -1,11 +1,21 @@
 
+import { db } from '../db';
+import { newsletterSubscriptionsTable } from '../db/schema';
 import { type NewsletterSubscription } from '../schema';
+import { eq, desc } from 'drizzle-orm';
 
-export async function getNewsletterSubscriptions(): Promise<NewsletterSubscription[]> {
-    // This is a placeholder declaration! Real code should be implemented here.
-    // The goal of this handler is to fetch all active newsletter subscriptions from the database.
-    // Typically used by administrators to view subscriber list or export for email campaigns.
-    // Should filter by is_active status and order by subscribed_at date.
-    
-    return Promise.resolve([]);
-}
+export const getNewsletterSubscriptions = async (): Promise<NewsletterSubscription[]> => {
+  try {
+    // Query active newsletter subscriptions ordered by subscription date (newest first)
+    const results = await db.select()
+      .from(newsletterSubscriptionsTable)
+      .where(eq(newsletterSubscriptionsTable.is_active, true))
+      .orderBy(desc(newsletterSubscriptionsTable.subscribed_at))
+      .execute();
+
+    return results;
+  } catch (error) {
+    console.error('Failed to fetch newsletter subscriptions:', error);
+    throw error;
+  }
+};

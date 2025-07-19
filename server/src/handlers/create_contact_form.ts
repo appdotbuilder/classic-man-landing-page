@@ -1,18 +1,26 @@
 
+import { db } from '../db';
+import { contactFormsTable } from '../db/schema';
 import { type CreateContactFormInput, type ContactForm } from '../schema';
 
-export async function createContactForm(input: CreateContactFormInput): Promise<ContactForm> {
-    // This is a placeholder declaration! Real code should be implemented here.
-    // The goal of this handler is to create a new contact form submission in the database.
-    // Should persist all contact form data for follow-up by course administrators.
-    // Could potentially send notification emails to administrators about new inquiries.
-    
-    return Promise.resolve({
-        id: Math.floor(Math.random() * 1000), // Placeholder ID
+export const createContactForm = async (input: CreateContactFormInput): Promise<ContactForm> => {
+  try {
+    // Insert contact form submission record
+    const result = await db.insert(contactFormsTable)
+      .values({
         name: input.name,
         email: input.email,
-        message: input.message,
-        submitted_at: new Date(),
-        is_read: false
-    } as ContactForm);
-}
+        message: input.message
+      })
+      .returning()
+      .execute();
+
+    const contactForm = result[0];
+    return {
+      ...contactForm
+    };
+  } catch (error) {
+    console.error('Contact form creation failed:', error);
+    throw error;
+  }
+};

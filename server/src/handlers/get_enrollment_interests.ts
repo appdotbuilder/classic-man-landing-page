@@ -1,11 +1,19 @@
 
+import { db } from '../db';
+import { enrollmentInterestsTable } from '../db/schema';
 import { type EnrollmentInterest } from '../schema';
+import { desc } from 'drizzle-orm';
 
 export async function getEnrollmentInterests(): Promise<EnrollmentInterest[]> {
-    // This is a placeholder declaration! Real code should be implemented here.
-    // The goal of this handler is to fetch all enrollment interest records from the database.
-    // Used by sales team to follow up with potential students.
-    // Should order by interested_at date and include is_contacted status for lead tracking.
-    
-    return Promise.resolve([]);
+  try {
+    const results = await db.select()
+      .from(enrollmentInterestsTable)
+      .orderBy(desc(enrollmentInterestsTable.interested_at))
+      .execute();
+
+    return results;
+  } catch (error) {
+    console.error('Failed to fetch enrollment interests:', error);
+    throw error;
+  }
 }
