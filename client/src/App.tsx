@@ -4,6 +4,7 @@ import { Input } from '@/components/ui/input';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Separator } from '@/components/ui/separator';
+import { Avatar, AvatarFallback } from '@/components/ui/avatar';
 import { trpc } from '@/utils/trpc';
 import { useState } from 'react';
 import type { CreateNewsletterSubscriptionInput, CreateEnrollmentInterestInput } from '../../server/src/schema';
@@ -300,23 +301,59 @@ function App() {
           </p>
           
           <div className="grid md:grid-cols-3 gap-8">
-            {[1, 2, 3].map((i) => (
-              <Card key={i} className="p-8 shadow-lg border-0 bg-white">
-                <CardContent className="text-center">
-                  <div className="text-4xl mb-6">💭</div>
-                  <p className="text-slate-600 mb-6 italic">
-                    "Depoimento inspirador sobre a transformação pessoal e os resultados obtidos com o curso..."
-                  </p>
-                  <div className="flex items-center justify-center gap-2">
-                    <div className="w-12 h-12 bg-slate-200 rounded-full"></div>
-                    <div>
-                      <p className="font-semibold text-slate-800">Aluno {i}</p>
-                      <p className="text-sm text-slate-500">Em breve...</p>
-                    </div>
+            <Card className="p-8 shadow-lg border-0 bg-white hover:shadow-xl transition-shadow">
+              <CardContent className="text-center">
+                <div className="text-4xl mb-6">💭</div>
+                <p className="text-slate-600 mb-6 italic text-left leading-relaxed">
+                  "O curso 'Homem Clássico' mudou minha perspectiva de vida. As aulas sobre autodisciplina e liderança me deram as ferramentas para ser um profissional e um pai melhor. Recomendo a todos que buscam excelência!"
+                </p>
+                <div className="flex items-center justify-center gap-3 mt-8">
+                  <Avatar className="w-12 h-12">
+                    <AvatarFallback className="bg-amber-100 text-amber-700 font-semibold">JM</AvatarFallback>
+                  </Avatar>
+                  <div className="text-left">
+                    <p className="font-semibold text-slate-800">João M.</p>
+                    <p className="text-sm text-slate-500">Empresário</p>
                   </div>
-                </CardContent>
-              </Card>
-            ))}
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card className="p-8 shadow-lg border-0 bg-white hover:shadow-xl transition-shadow">
+              <CardContent className="text-center">
+                <div className="text-4xl mb-6">💭</div>
+                <p className="text-slate-600 mb-6 italic text-left leading-relaxed">
+                  "Eu me sentia perdido e sem direção, mas o curso me ajudou a redescobrir meus valores e a agir com mais propósito. A comunidade é incrível e o suporte do instrutor faz toda a diferença."
+                </p>
+                <div className="flex items-center justify-center gap-3 mt-8">
+                  <Avatar className="w-12 h-12">
+                    <AvatarFallback className="bg-blue-100 text-blue-700 font-semibold">RC</AvatarFallback>
+                  </Avatar>
+                  <div className="text-left">
+                    <p className="font-semibold text-slate-800">Rafael C.</p>
+                    <p className="text-sm text-slate-500">Engenheiro</p>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card className="p-8 shadow-lg border-0 bg-white hover:shadow-xl transition-shadow">
+              <CardContent className="text-center">
+                <div className="text-4xl mb-6">💭</div>
+                <p className="text-slate-600 mb-6 italic text-left leading-relaxed">
+                  "Simplesmente transformador. Aprendi a comunicar com clareza, a ter mais presença e a cultivar virtudes que eu nem sabia que precisava. Minha autoconfiança disparou!"
+                </p>
+                <div className="flex items-center justify-center gap-3 mt-8">
+                  <Avatar className="w-12 h-12">
+                    <AvatarFallback className="bg-green-100 text-green-700 font-semibold">PA</AvatarFallback>
+                  </Avatar>
+                  <div className="text-left">
+                    <p className="font-semibold text-slate-800">Pedro A.</p>
+                    <p className="text-sm text-slate-500">Advogado</p>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>
