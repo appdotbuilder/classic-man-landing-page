@@ -255,8 +255,7 @@ function App() {
                 Conheça Seu Mentor
               </h2>
               <p className="text-xl text-slate-600 mb-6 leading-relaxed">
-                Com mais de uma década de experiência em desenvolvimento masculino e coaching de vida, 
-                nosso instrutor combina conhecimento acadêmico com sabedoria prática.
+                Com uma paixão de longa data pela filosofia clássica e desenvolvimento humano, o mentor deste curso dedicou mais de uma década a pesquisar e aplicar os princípios da masculinidade atemporal. Sua jornada pessoal de autodescoberta e aprofundamento em áreas como estoicismo, retórica e liderança, o capacitaram a criar um método prático e transformador para homens modernos que buscam propósito, virtude e excelência.
               </p>
               <div className="space-y-4 mb-8">
                 <div className="flex items-center gap-4">
@@ -279,10 +278,10 @@ function App() {
             </div>
             <div className="order-1 lg:order-2">
               <div className="bg-gradient-to-br from-slate-200 to-slate-300 rounded-2xl h-96 flex items-center justify-center shadow-lg">
-                <div className="text-slate-500 text-center">
+                <div className="text-slate-500 text-center px-6">
                   <div className="text-6xl mb-4">👨‍🏫</div>
-                  <p className="text-xl">Foto do Instrutor</p>
-                  <p className="text-sm text-slate-400">Em breve...</p>
+                  <p className="text-lg font-medium mb-2">Imagem inspiradora do seu mentor,</p>
+                  <p className="text-base text-slate-600">transmitindo confiança e sabedoria.</p>
                 </div>
               </div>
             </div>
